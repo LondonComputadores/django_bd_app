@@ -23,5 +23,8 @@ urlpatterns = [
     path('agenda/', views.lista_eventos),
     path('', RedirectView.as_view(url='/agenda/')),  #('', views.index),
     path('hello/<nome>/<int:idade>', views.hello),
-    path('soma/<int:num1>/<int:num2>/', views.soma)
+    path('soma/<int:num1>/<int:num2>/', views.soma),
+    path('login/', views.login_user),
+    path('login/submit', views.submit_login), #Por ser post não deve ter / depois do submit (/errado/submit/)
+    path('logout/', views.logout_user)
 ]
