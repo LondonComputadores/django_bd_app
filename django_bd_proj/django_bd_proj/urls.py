@@ -21,10 +21,15 @@ from django.views.generic import RedirectView
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('agenda/', views.lista_eventos),
-    path('', RedirectView.as_view(url='/agenda/')),  #('', views.index),
+    path('agenda/evento/', views.eventos),
+    path('agenda/evento/submit', views.submit_evento),
+    path('', RedirectView.as_view(url='/agenda/')),  
     path('hello/<nome>/<int:idade>', views.hello),
     path('soma/<int:num1>/<int:num2>/', views.soma),
     path('login/', views.login_user),
     path('login/submit', views.submit_login), #Por ser post não deve ter / depois do submit (/errado/submit/)
     path('logout/', views.logout_user)
 ]
+
+#path('', RedirectView.as_view(url='/agenda/')), substituiu('', views.index),
+#path('login/submit', views.submit_login), Por ser 'POST' não deve ter '/' depois do submit (/errado/submit/)
